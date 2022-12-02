@@ -37,8 +37,12 @@ export class Login extends Component {
         fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login",
         {
         method:"POST",
+       
       
-        headers:{"content-type":"application/json"},
+        headers:{"content-type":"application/json",
+        'Access-Control-Allow-Origin':'https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login',
+        "Access-Control-Allow-Credentials": 'true'
+      },
         body:JSON.stringify(this.state)
         
       }).then((res)=>{
@@ -101,7 +105,7 @@ export class Login extends Component {
         className="form-control"
         placeholder="Enter password"
       />
-       { this.state.loginStatus == false &&(<span className='text-danger'> Invalid Username Or password</span>) }
+       { this.state.loginStatus === false &&(<span className='text-danger'> Invalid Username Or password</span>) }
     </div>
     <div className="mb-3">
       <div className="custom-control custom-checkbox">

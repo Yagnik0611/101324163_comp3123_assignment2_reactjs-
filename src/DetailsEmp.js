@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams  } from 'react-router-dom'
 import { useEffect, useState  } from "react";
-import { Link, useNavigate  } from "react-router-dom";
+//import { Link, useNavigate  } from "react-router-dom";
 
 const DetailsEmp = () => {
 //https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login
@@ -45,7 +45,7 @@ const [empdata, empdatachange] = useState(null);
                  }
 
           <p>
-            <a className="btn btn-danger" href="/" role="button">View Employee </a></p>
+            <a className="btn btn-danger" href="/employee/viewemp" role="button">View Employee </a></p>
          
         </div>
 

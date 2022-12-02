@@ -17,12 +17,31 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
 
+
 function App() {
 
+const logout =()=>{
+  localStorage.removeItem("token");
+  window.location.replace('/')
+}
   return (
     <>
+ 
+      <div class="header">
+  <h1>Employee Management App</h1>
+  
+</div>
 
-      <h1 className='App-header'>Employee Management App</h1>
+
+<div class="navbar">
+  <a href="/employee/viewemp" >View Employee</a>
+  <a href="/employee/create">Add Employee</a>
+  
+  <a  href="/signup" class="right">Signup</a>
+  <a   onClick={() => logout() }  class="right">LogOut</a>
+  <a  href="/" >Login</a>
+
+</div>
    
       <BrowserRouter>
       <Routes>

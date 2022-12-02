@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 // Bootstrap CSS
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+
 // Bootstrap Bundle JS
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 

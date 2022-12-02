@@ -133,7 +133,7 @@ export class Signup extends Component {
        placeholder="Enter password"
      />
       <span className='text-danger'> { this.state.error.password}</span>
-      {this.state.SignupStatus== false &&(<span className='text-danger'> Invalid Username Or password</span>) }
+      {this.state.SignupStatus=== false &&(<span className='text-danger'> Invalid Username Or password</span>) }
    </div>
    <div className="mb-3">
      <div className="custom-control custom-checkbox">

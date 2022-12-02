@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const EditEmp = () => {
 
@@ -16,7 +16,7 @@ const[email,emailchange]=useState("");
 
   
 useEffect(() => {
-  fetch('http://localhost:3001/api/emp/employees/' + empid, {
+  fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees/' + empid, {
       method: 'GET',
      mode:"cors"
     }).then((res) => {
@@ -47,7 +47,7 @@ const handlesubmit=(e)=>{
   const empdata={first_name,last_name,email,salary,gender};
 
   console.log(empdata)
-  fetch("http://localhost:3001/api/emp/employees/" + empid,
+  fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees/" + empid,
   {
   method:"PUT",
   headers:{"content-type":"application/json"},
@@ -55,7 +55,7 @@ const handlesubmit=(e)=>{
   
 }).then((res)=>{
   alert('Saved successfully.')
-  navigate('/');
+  navigate('/employee/viewemp');
  
 }).catch((err)=>{
   console.log(err.message)

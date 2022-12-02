@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+//import { Link, useNavigate } from "react-router-dom";
 import AuthFail from "./AuthFail";
 
    
@@ -17,7 +17,7 @@ import AuthFail from "./AuthFail";
   const url2 =   `/employee/edit/`
 const  ViewEmp=()=> {
     const [empdata, empdatachange] = useState(null);
-    const [Authorization, setAuth] = useState("false");
+    const [Authorization, setAuth] = useState("");
     useEffect(() => {
         fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees', {
             method: 'GET',
@@ -28,7 +28,7 @@ const  ViewEmp=()=> {
            mode:"cors"
           }).then((res) => {
             console.log(res)
-           if (res.status == 403){
+           if (res.status != 403){
             setAuth("true");
            }
            else setAuth("false");
@@ -74,10 +74,10 @@ const  ViewEmp=()=> {
     return (
         
         <>
-          {Authorization === "false" ? (
+          {Authorization != "false" ? (
            <>
             <div>
-      <h1  style ={{background:"#282c34"}}className='text-center   text-white'> EMPLOYEE LIST</h1>
+      <h1  className='text-center   text-black'> EMPLOYEE LIST</h1>
   
   <div className="container">
       <div className="card">

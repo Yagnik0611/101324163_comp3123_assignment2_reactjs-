@@ -1,7 +1,7 @@
 import React , {Component}from 'react'
-import axios from 'axios'
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from 'react-router-dom';
+//import axios from 'axios'
+//import { useEffect, useState } from "react";
+//import { useNavigate, useParams } from 'react-router-dom';
 
 import AuthFail from "./AuthFail";
 
@@ -56,12 +56,16 @@ export default class CreateEmp extends Component{
   },
       
     }).then((res)=>{
+      console.log(res)
       if (res.status == 403){
-        this.setState({Authorization:"true"})
+        this.setState({Authorization:"false"})
        }
+       else{   
+            this.setState({auth:"true"})
+      console.log(this.state.auth.Authorization)
 
-       this.setState({Authorization:"false"})
-      return res.json();
+       
+      return res.json();}
     
   }).then((resp) => {
     
@@ -93,7 +97,7 @@ export default class CreateEmp extends Component{
        
         
 
-        fetch("http://localhost:3001/api/emp/employees",
+        fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees",
         {
         method:"POST",
         headers:{
@@ -151,11 +155,9 @@ export default class CreateEmp extends Component{
     
        
           
-           {this.state.auth.Authorization === "false" ? (  <>
+           {this.state.auth.Authorization !== "false" ? (  <>
     
-            <h5 className='App-header2'>
-                   <a  href="/employee/viewemp"className="btn btn-success">Home Page</a>
-               </h5>
+           
    
     <div className="container h-100">
     <div className="row h-100 justify-content-center align-items-center">
