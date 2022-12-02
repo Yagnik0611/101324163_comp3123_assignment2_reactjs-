@@ -8,7 +8,7 @@ import React, { Component } from 'react'
 
 }
 const loginStatus ={
-    loginStatus : ""
+    msg : ""
 }
 export class Login extends Component {
 
@@ -46,25 +46,26 @@ export class Login extends Component {
         body:JSON.stringify(this.state)
         
       }).then((res)=>{
-        console.log(res)
+        
+        
        if (res.status === true || res.ok === true){
         
-        this.setState({loginStatus: true})
+        
         window.location.replace('/employee/viewemp')
-        console.log(this.state)
+      
+       return res.json();
 
        }
-       console.log(this.state.loginStatus)
-      
+     
           localStorage.removeItem("token");
       
-       
+          return res.json();
       
-        return res.json();
+   
       
     }).then((resp) => {
 
-    
+this.setState({msg:resp.message})
      localStorage.setItem("token","Bearer " +resp.accessToken)
         
         
@@ -105,7 +106,7 @@ export class Login extends Component {
         className="form-control"
         placeholder="Enter password"
       />
-       { this.state.loginStatus === false &&(<span className='text-danger'> Invalid Username Or password</span>) }
+       { this.state.msg  &&(<span className='text-danger'> Invalid Username Or password</span>) }
     </div>
     <div className="mb-3">
       <div className="custom-control custom-checkbox">
