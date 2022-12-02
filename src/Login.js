@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 
  const INITIAL_VALUE ={
-    username: "",
+    username:"",
     password:""
 
 }
@@ -31,11 +31,13 @@ export class Login extends Component {
         event.preventDefault()
        
        
+//https://101324163-comp-3123-assignment1-backend.vercel.app/
+//http://localhost:3001/api/user/login
 
-
-        fetch("http://localhost:3001/api/user/login",
+        fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login",
         {
         method:"POST",
+      
         headers:{"content-type":"application/json"},
         body:JSON.stringify(this.state)
         
@@ -49,7 +51,7 @@ export class Login extends Component {
 
        }
        console.log(this.state.loginStatus)
-       this.setState({loginStatus: false})
+      
           localStorage.removeItem("token");
       
        
@@ -60,9 +62,6 @@ export class Login extends Component {
 
     
      localStorage.setItem("token","Bearer " +resp.accessToken)
-    
-    
-        
         
         
       }).catch((err)=>{
@@ -102,7 +101,7 @@ export class Login extends Component {
         className="form-control"
         placeholder="Enter password"
       />
-       {this.state.loginStatus== false &&(<span className='text-danger'> Invalid Username Or password</span>) }
+       { this.state.loginStatus == false &&(<span className='text-danger'> Invalid Username Or password</span>) }
     </div>
     <div className="mb-3">
       <div className="custom-control custom-checkbox">
@@ -123,7 +122,7 @@ export class Login extends Component {
       
     </div>
     <p className="forgot-password text-right">
-      Forgot <a href="#">password?</a>
+      New User? <a href="/signup">Create Account</a>
     </p>
   </form>
   </div>

@@ -4,9 +4,9 @@ import { useEffect, useState  } from "react";
 import { Link, useNavigate  } from "react-router-dom";
 
 const DetailsEmp = () => {
-
+//https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login
   useEffect(() => {
-    fetch('http://localhost:3001/api/emp/employees/' + empid, {
+    fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees/' + empid, {
         method: 'GET',
        mode:"cors"
        }).then((res) => {

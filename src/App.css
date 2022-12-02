@@ -38,6 +38,22 @@
   padding-bottom: 50px
 
 }
+.signup{
+  background: rgb(234, 231, 231);
+  width: 600px;
+  margin: 60px auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  border-radius: 50px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+  padding-left: 40px;
+  padding-right:40px;
+  padding-bottom: 50px
+
+}
 
 .custom-container {
   @include make-container();

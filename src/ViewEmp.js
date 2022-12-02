@@ -17,9 +17,9 @@ import AuthFail from "./AuthFail";
   const url2 =   `/employee/edit/`
 const  ViewEmp=()=> {
     const [empdata, empdatachange] = useState(null);
-    const [Authorization, setAuth] = useState(null);
+    const [Authorization, setAuth] = useState("false");
     useEffect(() => {
-        fetch('http://localhost:3001/api/emp/employees', {
+        fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees', {
             method: 'GET',
              headers:{
             
@@ -27,10 +27,11 @@ const  ViewEmp=()=> {
              },
            mode:"cors"
           }).then((res) => {
+            console.log(res)
            if (res.status == 403){
-            setAuth(false);
+            setAuth("true");
            }
-           else setAuth(true);
+           else setAuth("false");
             return res.json();
         }).then((resp) => {
            console.log(resp)
@@ -46,12 +47,13 @@ const  ViewEmp=()=> {
         console.log(id)
        
         if (window.confirm('Do you want to remove?')) {
-            fetch("http://localhost:3001/api/emp/employees?eid=" + id, {
+            fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees?eid=" + id, {
                 method: "DELETE",
                 mode:"cors"
             }).then((response) => {
                 if (response.ok){
                     let json =  response.json();
+                    alert('Removed successfully.')
                     window.location.reload();
                 console.info(json);
                 this.setState({ "project": json});
@@ -61,7 +63,7 @@ const  ViewEmp=()=> {
               
           
             }).catch((err) => {
-                alert('Removed successfully.')
+               console.log(err)
             })
         }
     }
@@ -71,14 +73,10 @@ const  ViewEmp=()=> {
     
     return (
         
-        <>{
-    
-       
-         }
-          {Authorization ===false ? (
-            <AuthFail/>
-       
-      ) : <div>
+        <>
+          {Authorization === "false" ? (
+           <>
+            <div>
       <h1  style ={{background:"#282c34"}}className='text-center   text-white'> EMPLOYEE LIST</h1>
   
   <div className="container">
@@ -127,7 +125,9 @@ const  ViewEmp=()=> {
               </table>
           </div>
       </div>
-  </div> </div>}
+  </div> </div></>
+       
+      ) : <AuthFail/>}
     </> 
    
                 

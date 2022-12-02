@@ -15,7 +15,7 @@ const INITIAL_VALUE ={
 
 }
 const auth ={
-  Authorization :false
+  Authorization :"false"
 }
 const error ={
   first_name:"",
@@ -45,12 +45,9 @@ export default class CreateEmp extends Component{
        
     }
     onLogin  = async ()=>{
-
-      
-     
-
-
-      await fetch("http://localhost:3001/api/user/login",
+    //  https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees
+    //http://localhost:3001/api/user/login
+      await fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login",
       {
       method:"GET",
       headers:{
@@ -60,13 +57,14 @@ export default class CreateEmp extends Component{
       
     }).then((res)=>{
       if (res.status == 403){
-        this.setState({Authorization:false})
+        this.setState({Authorization:"true"})
        }
 
-       this.setState({Authorization:true})
+       this.setState({Authorization:"false"})
       return res.json();
     
   }).then((resp) => {
+    
    console.log(resp)
   
       
@@ -80,9 +78,9 @@ export default class CreateEmp extends Component{
   }
 
     componentDidMount() {
-      
-     
+ 
     this.onLogin();
+
     }
     
    
@@ -153,7 +151,7 @@ export default class CreateEmp extends Component{
     
        
           
-           {this.state.Authorization ? (  <>
+           {this.state.auth.Authorization === "false" ? (  <>
     
             <h5 className='App-header2'>
                    <a  href="/employee/viewemp"className="btn btn-success">Home Page</a>

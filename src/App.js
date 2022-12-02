@@ -15,6 +15,7 @@ import EditEmp from './EditEmp';
 import DetailsEmp from './DetailsEmp';
 import { useNavigate, useParams } from 'react-router-dom';
 import Login from './Login';
+import Signup from './Signup';
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />}> </Route>
+        <Route path="/signup" element={<Signup />}> </Route>
+
         <Route path="/employee/viewemp" element={<ViewEmp />}></Route>
         <Route path="/employee/create" element={<CreateEmp />}></Route>
         <Route path="/employee/edit/:empid" element={<EditEmp />}></Route>
