@@ -6,7 +6,7 @@ import { useEffect, useState  } from "react";
 const DetailsEmp = () => {
 //https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login
   useEffect(() => {
-    fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees/' + empid, {
+    fetch('https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/emp/employees/' + empid, {
         method: 'GET',
        mode:"cors"
        }).then((res) => {

@@ -19,7 +19,7 @@ const  ViewEmp=()=> {
     const [empdata, empdatachange] = useState(null);
     const [Authorization, setAuth] = useState("");
     useEffect(() => {
-        fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees', {
+        fetch('https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/emp/employees', {
             method: 'GET',
              headers:{
             
@@ -47,7 +47,7 @@ const  ViewEmp=()=> {
         console.log(id)
        
         if (window.confirm('Do you want to remove?')) {
-            fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees?eid=" + id, {
+            fetch("https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/emp/employees?eid=" + id, {
                 method: "DELETE",
                 mode:"cors"
             }).then((response) => {
@@ -83,9 +83,7 @@ const  ViewEmp=()=> {
       <div className="card">
           
           <div className="card-body">
-              <div>
-                  <a  href="/employee/create"className="btn btn-success">Add new (+)</a>
-              </div>
+             
           
             
               <table className="table  table-bordered">

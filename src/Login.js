@@ -34,13 +34,13 @@ export class Login extends Component {
 //https://101324163-comp-3123-assignment1-backend.vercel.app/
 //http://localhost:3001/api/user/login
 
-        fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login",
+        fetch("https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/user/login",
         {
         method:"POST",
        
       
         headers:{"content-type":"application/json",
-        'Access-Control-Allow-Origin':'https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login',
+        'Access-Control-Allow-Origin':'https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app',
         "Access-Control-Allow-Credentials": 'true'
       },
         body:JSON.stringify(this.state)

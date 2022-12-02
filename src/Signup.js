@@ -41,7 +41,7 @@ export class Signup extends Component {
       
 //https://101324163-comp-3123-assignment1-backend.vercel.app
 
-       fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/signup",
+       fetch("https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/user/signup",
        {
         method:"POST",
         headers:{

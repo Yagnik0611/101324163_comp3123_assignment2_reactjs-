@@ -16,7 +16,7 @@ const[email,emailchange]=useState("");
 
   
 useEffect(() => {
-  fetch('https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees/' + empid, {
+  fetch('https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/emp/employees/' + empid, {
       method: 'GET',
      mode:"cors"
     }).then((res) => {
@@ -47,7 +47,7 @@ const handlesubmit=(e)=>{
   const empdata={first_name,last_name,email,salary,gender};
 
   console.log(empdata)
-  fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees/" + empid,
+  fetch("https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/emp/employees/" + empid,
   {
   method:"PUT",
   headers:{"content-type":"application/json"},

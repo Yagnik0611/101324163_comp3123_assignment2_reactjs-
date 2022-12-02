@@ -47,7 +47,7 @@ export default class CreateEmp extends Component{
     onLogin  = async ()=>{
     //  https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees
     //http://localhost:3001/api/user/login
-      await fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/user/login",
+      await fetch("https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/user/login",
       {
       method:"GET",
       headers:{
@@ -95,9 +95,9 @@ export default class CreateEmp extends Component{
 
         console.log(this.state)
        
-        
+        //https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app
 
-        fetch("https://101324163-comp-3123-assignment1-backend.vercel.app/api/emp/employees",
+        fetch("https://101324163-comp-3123-assignment1-backend-yagnik0611.vercel.app/api/emp/employees",
         {
         method:"POST",
         headers:{
